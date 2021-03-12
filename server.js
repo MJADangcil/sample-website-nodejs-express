@@ -16,10 +16,12 @@ const port = 3000;
 
 app.set('trust proxy', 1);
 
-app.use(cookieSession({
-  name: 'session',
-  keys: ['Gadfj2349afk', 'adsfjgkadfF32123']
-}));
+app.use(
+  cookieSession({
+    name: 'session',
+    keys: ['Gadfj2349afk', 'adsfjgkadfF32123'],
+  })
+);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
@@ -36,6 +38,7 @@ app.use(async (request, response, next) => {
   } catch (err) {
     return next(err);
   }
+  
 });
 
 app.use(
